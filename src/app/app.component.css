@@ -1,0 +1,197 @@
+h1 {
+  font-size: 3rem;
+    color: white;
+}
+  
+.content {
+  display: flex;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-container {
+  display: block;
+  max-width: 36rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.5rem;
+  background-color: #343d4d;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px #9EA3AE;
+}
+
+.project-title {
+  width: 100%;
+  line-height: 2rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.project-picture {
+  height: auto;
+  width: 100%;
+  max-height: 30rem;
+  max-width: 36rem;
+  border-radius: 0.5rem;
+}
+
+.project-description {
+  width: 100%;
+  height: auto;
+}
+
+.project-text {
+  width: 100%;
+  height: auto;
+  font-size: 1.01rem;
+  color: #9EA3AE;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.repository-link {
+  line-height: 4rem;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  background-color: #3B82F6;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 50rem;
+}
+
+.tech-entry {
+  width: 12rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  margin: 1rem;
+  background-color: #343d4d;
+}
+
+.tech-entry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px #9EA3AE;
+}
+
+.tech-img {
+  width: 3rem;
+  height: auto;
+  margin-left: 0.5rem;
+}
+
+.tech-name {
+  margin-left: 1rem;
+  color: #9EA3AE;
+}
+
+.work-entry {
+  display: block;
+  background-color: #343d4d;
+  max-width: 34rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.work-name {
+    line-height: 1.2rem;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0.5rem;
+    margin-top: 1rem;
+}
+
+.work-period {
+    font-size: 1rem;
+    color: #4c7cb0;
+    margin: 0.5rem;
+    margin-top: 1rem;
+}
+
+.work-description {
+    font-size: 1rem;
+    color: white;
+    margin: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.work-entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px #9EA3AE;
+}
+
+.intro-container {
+    display: block;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    margin-right: 10rem;
+    background-color: #343d4d;
+    border-radius: 5rem;
+    text-align: center;
+    width: 100%;
+    animation: intro-animation linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+}
+
+.intro-img {
+    border-radius: 1.5rem;
+    max-width: 12rem;
+    margin-top: 12rem;
+    margin-bottom: 3rem;
+}
+
+.intro-job {
+    margin-top: 3rem;
+    padding-bottom: 12rem;
+    color: #4c7cb0;
+    font-size: 2rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.mt-7 {
+  margin-top: 7rem;
+}
+
+.fly-in {
+  opacity: 0;
+  transform: translateY(4rem);
+  animation: fly-in linear forwards;
+  animation-timeline: view();
+  animation-range-start: 1rem;
+  animation-range-end: 15rem;
+}
+
+@keyframes intro-animation {
+  to {
+    transform: perspective(800px) rotateX(-70deg) translateY(-30px);
+    box-shadow: 0 0 300px 20px #4c7cb0;
+  }
+}
+
+@keyframes fly-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
