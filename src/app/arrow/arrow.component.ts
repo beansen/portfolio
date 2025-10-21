@@ -11,12 +11,47 @@ export class ArrowComponent implements OnInit {
   cellState: number[] = []
   gridWidth: number = 10
   gridHeight: number = 10
+  safeCells: number = 0;
+  correctGuesses: number = 0;
 
   ngOnInit(): void {
       for (let i = 0; i < this.gridHeight * this.gridWidth; i++) {
         this.arrows.push(this.getRandomInt(4));
         this.cellState.push(0)
       }
+
+      for (let y = 0; y < this.gridHeight; y++) {
+        for (let x = 0; x < this.gridWidth; x++) {
+          if (y > 0) {
+            if ((this.arrows[(y - 1) * this.gridWidth + x] == this.arrows[y * this.gridWidth + x]) || (this.arrows[(y - 1) * this.gridWidth + x] == 0 && this.arrows[y * this.gridWidth + x] == 2)) {
+              this.arrows[y * this.gridWidth + x] = this.getRandomInt(4);
+            }
+          }
+          if (y < this.gridHeight - 1) {
+            if ((this.arrows[(y + 1) * this.gridWidth + x] == this.arrows[y * this.gridWidth + x]) || (this.arrows[(y + 1) * this.gridWidth + x] == 2 && this.arrows[y * this.gridWidth + x] == 0)) {
+              this.arrows[y * this.gridWidth + x] = this.getRandomInt(4);
+            }
+          }
+          if (x > 0) {
+            if ((this.arrows[y * this.gridWidth + x - 1] == this.arrows[y * this.gridWidth + x]) || (this.arrows[y * this.gridWidth + x - 1] == 3 && this.arrows[y * this.gridWidth + x] == 1)) {
+              this.arrows[y * this.gridWidth + x] = this.getRandomInt(4);
+            }
+          }
+          if (x < this.gridWidth - 1) {
+            if (this.arrows[y * this.gridWidth + x + 1] == this.arrows[y * this.gridWidth + x]) {
+              this.arrows[y * this.gridWidth + x] = this.getRandomInt(4);
+            }
+          }
+        }
+      }
+
+    for (let y = 0; y < this.gridHeight; y++) {
+      for (let x = 0; x < this.gridWidth; x++) {
+        if (this.isSafe(x, y)) {
+          this.safeCells++
+        }
+      }
+    }
   }
 
   getRandomInt(max: number) {
@@ -50,7 +85,7 @@ export class ArrowComponent implements OnInit {
 
   solveGrid() {
     for (let y = 0; y < this.gridHeight; y++) {
-      for (let x = 0; x < this.gridHeight; x++) {
+      for (let x = 0; x < this.gridWidth; x++) {
         if (this.cellState[y * this.gridWidth + x] == 0) {
           this.cellState[y * this.gridWidth + x] = this.isSafe(x, y) ? 3 : 4;
         }
@@ -62,8 +97,13 @@ export class ArrowComponent implements OnInit {
     if (this.cellState[y * this.gridWidth + x] == 0) {
       if (this.isSafe(x, y)) {
         this.cellState[y * this.gridWidth + x] = 1;
+        this.correctGuesses++;
       } else {
         this.cellState[y * this.gridWidth + x] = 2;
+        this.solveGrid();
+      }
+
+      if (this.correctGuesses == this.safeCells) {
         this.solveGrid();
       }
     }

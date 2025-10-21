@@ -1,4 +1,5 @@
 <div *ngIf="arrows.length > 0" class="container">
+  <div>{{correctGuesses}}/{{safeCells}}</div>
   <div *ngFor="let rowIndex of [].constructor(gridHeight), index as i" class="row row-cols-auto">
     <div *ngFor="let columnIndex of [].constructor(gridWidth), index as j" class="col tile"
          [ngClass]="{'tile-green-selected': cellState[i * gridWidth + j] == 1, 'tile-red-selected': cellState[i * gridWidth + j] == 2,
