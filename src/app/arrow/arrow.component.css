@@ -1,0 +1,88 @@
+.tile {
+  background-color: rgb(240, 240, 240);
+  width: 50px;
+  height: 45px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: rgb(199, 204, 209) solid 1px;
+  margin: 2px;
+  justify-content: center;
+  display: flex;
+}
+
+.tile-green-selected {
+  background-color: rgb(40, 167, 69);
+}
+
+.tile-red-selected {
+  background-color: rgb(220, 53, 69);
+}
+
+.tile-green-solved {
+  background-color: rgba(40, 167, 69, 0.2);
+  border-color: rgb(40, 167, 69);
+}
+
+.tile-red-solved {
+  background-color: rgba(220, 53, 69, 0.2);
+  border-color: rgb(220, 53, 69);
+}
+
+.arrow {
+  content: "";
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+  font-weight: 700;
+  color: black;
+}
+
+.arrow-white {
+  color: white;
+}
+
+.arrow-red {
+  color: rgb(220, 53, 69);
+}
+
+.arrow-green {
+  color: rgb(40, 167, 69);
+}
+
+.arrow-down {
+  padding-bottom: 5px;
+}
+
+.arrow-down::before {
+  content: "\2193";
+  display: inline-block;
+}
+
+.arrow-up {
+  padding-bottom: 5px;
+}
+
+.arrow-up::before {
+  content: "\2191";
+  font-size: 2rem;
+}
+
+.arrow-left {
+  padding-bottom: 10px;
+}
+
+.arrow-left::before {
+  content: "\2190";
+  display: inline-block;
+}
+
+.arrow-right {
+  padding-bottom: 10px;
+}
+
+.arrow-right::before {
+  content: "\2192";
+  display: inline-block;
+}
+

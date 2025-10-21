@@ -1,0 +1,14 @@
+<div *ngIf="arrows.length > 0" class="container">
+  <div *ngFor="let rowIndex of [].constructor(gridHeight), index as i" class="row row-cols-auto">
+    <div *ngFor="let columnIndex of [].constructor(gridWidth), index as j" class="col tile"
+         [ngClass]="{'tile-green-selected': cellState[i * gridWidth + j] == 1, 'tile-red-selected': cellState[i * gridWidth + j] == 2,
+         'tile-green-solved': cellState[i * gridWidth + j] == 3, 'tile-red-solved': cellState[i * gridWidth + j] == 4}"
+         (click)="clickCell(j, i)">
+      <i class="arrow"
+         [ngClass]="{'arrow-down': arrows[i * gridWidth + j] == 0, 'arrow-left': arrows[i * gridWidth + j] == 1,
+         'arrow-up': arrows[i * gridWidth + j] == 2, 'arrow-right': arrows[i * gridWidth + j] == 3,
+         'arrow-white': cellState[i * gridWidth + j] == 1 || cellState[i * gridWidth + j] == 2,
+         'arrow-red': cellState[i * gridWidth + j] == 4, 'arrow-green': cellState[i * gridWidth + j] == 3}"></i>
+    </div>
+  </div>
+</div>
