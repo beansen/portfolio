@@ -1,4 +1,4 @@
-<div *ngIf="arrows.length > 0" class="container">
+<div *ngIf="arrows.length > 0" class="container mt-5">
   <div>{{correctGuesses}}/{{safeCells}}</div>
   <div *ngFor="let rowIndex of [].constructor(gridHeight), index as i" class="row row-cols-auto">
     <div *ngFor="let columnIndex of [].constructor(gridWidth), index as j" class="col tile"

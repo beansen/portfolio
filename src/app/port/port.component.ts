@@ -7,7 +7,7 @@ import {DOCUMENT} from "@angular/common";
   styleUrls: ['./port.component.css']
 })
 export class PortComponent implements OnInit, OnDestroy {
-  
+
   constructor(
     @Inject(DOCUMENT) private document: Document) {}
 
@@ -18,6 +18,6 @@ export class PortComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     // remove the class form body tag
-    this.document.body.classList.add('port-body');
+    this.document.body.classList.remove('port-body');
   }
 }

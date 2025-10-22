@@ -1,23 +1,27 @@
-<div class="content">
-  <div class="container-sm">
-    <div class="row">
-      <div class="col letter-card">
-
+<div class="content mt-5">
+  <div *ngFor="let row of [].constructor(6), index as r" class="row row-cols-auto">
+    <div *ngFor="let col of [].constructor(5), index as c" class="col letter-card" [ngClass]="{'key-right-position': tileState[r][c] == 1,
+    'key-contains': tileState[r][c] == 2, 'key-not-contains': tileState[r][c] == 3}">
+      <span class="word-char">{{guesses[r][c]}}</span>
+    </div>
+  </div>
+  <div class="keyboard-container mt-5">
+    <div class="row row-cols-auto">
+      <div *ngFor="let letter of lettersFirstRow" (click)="clickedLetter(letter)" class="col key" [ngClass]="{'key-right-position': rightPositionLetters.includes(letter),
+      'key-contains': containsLetters.includes(letter), 'key-not-contains': wrongLetters.includes(letter)}">
+        <span class="key-letter">{{letter.toUpperCase()}}</span>
       </div>
-      <div class="col letter-card">
-
+    </div>
+    <div class="row row-cols-auto">
+      <div *ngFor="let letter of lettersSecondRow" (click)="clickedLetter(letter)" class="col key" [ngClass]="{'key-right-position': rightPositionLetters.includes(letter),
+      'key-contains': containsLetters.includes(letter), 'key-not-contains': wrongLetters.includes(letter)}">
+        <span class="key-letter">{{letter.toUpperCase()}}</span>
       </div>
-      <div class="col letter-card">
-
-      </div>
-      <div class="col letter-card">
-
-      </div>
-      <div class="col letter-card">
-
-      </div>
-      <div class="col letter-card">
-
+    </div>
+    <div class="row row-cols-auto">
+      <div *ngFor="let letter of lettersThirdRow, index as i" class="col key" (click)="clickedLetter(letter)" [ngClass]="{'special-key': i == 0 || i == 8,
+      'key-right-position': rightPositionLetters.includes(letter), 'key-contains': containsLetters.includes(letter), 'key-not-contains': wrongLetters.includes(letter)}">
+        <span class="key-letter">{{letter.toUpperCase()}}</span>
       </div>
     </div>
   </div>
