@@ -5,7 +5,7 @@
         <span class="word-char">{{guesses[r][c]}}</span>
       </div>
     </div>
-    <div class="container-sm keyboard-container mt-5">
+    <div class="keyboard-container mt-5">
       <div class="row gap-1">
         <div *ngFor="let letter of lettersFirstRow" (click)="clickedLetter(letter)" class="col key" [ngClass]="{'key-right-position': rightPositionLetters.includes(letter),
       'key-contains': containsLetters.includes(letter), 'key-not-contains': wrongLetters.includes(letter)}">
@@ -18,7 +18,7 @@
           <span class="key-letter">{{letter.toUpperCase()}}</span>
         </div>
       </div>
-      <div class="row row-cols-auto gap-1 mt-1">
+      <div class="row gap-1 mt-1">
         <div *ngFor="let letter of lettersThirdRow, index as i" class="col key" (click)="clickedLetter(letter)" [ngClass]="{'special-key': i == 0 || i == 8,
       'key-right-position': rightPositionLetters.includes(letter), 'key-contains': containsLetters.includes(letter), 'key-not-contains': wrongLetters.includes(letter)}">
           <span class="key-letter">{{letter.toUpperCase()}}</span>

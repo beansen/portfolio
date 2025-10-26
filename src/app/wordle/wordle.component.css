@@ -17,7 +17,7 @@
 
 .keyboard-container {
   height: 200px;
-  max-width: 500px;
+  min-width: 370px;
 }
 
 .key {
