@@ -8,21 +8,21 @@
 
 .letter-card {
   border: #9EA3AE 1px solid;
-  width: 58px;
-  height: 58px;
+  width: 3.3rem;
+  height: 3.3rem;
   margin: 3px;
   justify-content: center;
   display: flex;
 }
 
 .keyboard-container {
-  height: 200px;
-  min-width: 370px;
+  max-width: 30rem;
 }
 
 .key {
   background-color: rgb(129, 131, 132);
-  height: 58px;
+  width: 1.81rem;
+  height: 2.3rem;
   justify-content: center;
   display: flex;
   border-radius: 4px;
@@ -38,11 +38,11 @@
 }
 
 .key-right-position {
-background-color: rgb(83, 141, 78)
+  background-color: rgb(83, 141, 78)
 }
 
 .special-key {
-  width: 54px;
+  width: 2.31rem;
 }
 
 .key-letter {
@@ -50,7 +50,11 @@ background-color: rgb(83, 141, 78)
   font-size: 1rem;
   font-weight: 700;
   align-content: center;
-  line-height: 58px;
+  line-height: 2.3rem;
+}
+
+.key-letter-special {
+  font-size: 0.75rem;
 }
 
 .word-char {
