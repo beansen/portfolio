@@ -6,19 +6,19 @@
       </div>
     </div>
     <div class="keyboard-container mt-3">
-      <div class="row gap-1 justify-content-center d-flex">
+      <div class="row justify-content-center d-flex">
         <div *ngFor="let letter of lettersFirstRow" (click)="clickedLetter(letter)" class="col key" [ngClass]="{'key-right-position': rightPositionLetters.includes(letter),
       'key-contains': containsLetters.includes(letter), 'key-not-contains': wrongLetters.includes(letter)}">
           <span class="key-letter">{{letter.toUpperCase()}}</span>
         </div>
       </div>
-      <div class="row gap-1 px-3 mt-1 d-flex justify-content-center">
+      <div class="row px-3 d-flex justify-content-center">
         <div *ngFor="let letter of lettersSecondRow" (click)="clickedLetter(letter)" class="col key" [ngClass]="{'key-right-position': rightPositionLetters.includes(letter),
       'key-contains': containsLetters.includes(letter), 'key-not-contains': wrongLetters.includes(letter)}">
           <span class="key-letter">{{letter.toUpperCase()}}</span>
         </div>
       </div>
-      <div class="row gap-1 mt-1 d-flex justify-content-center">
+      <div class="row d-flex justify-content-center">
         <div *ngFor="let letter of lettersThirdRow, index as i" class="col key" (click)="clickedLetter(letter)" [ngClass]="{'special-key': i == 0 || i == 8,
       'key-right-position': rightPositionLetters.includes(letter), 'key-contains': containsLetters.includes(letter), 'key-not-contains': wrongLetters.includes(letter)}">
           <span class="key-letter" [ngClass]="{'key-letter-special': i == 0 || i == 8}">{{letter.toUpperCase()}}</span>

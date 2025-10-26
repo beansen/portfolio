@@ -21,12 +21,13 @@
 
 .key {
   background-color: rgb(129, 131, 132);
-  width: 1.81rem;
-  height: 2.3rem;
+  width: 1.95rem;
+  height: 2.5rem;
   justify-content: center;
   display: flex;
   border-radius: 4px;
   cursor: pointer;
+  margin: 3px;
 }
 
 .key-contains {
@@ -42,7 +43,7 @@
 }
 
 .special-key {
-  width: 2.31rem;
+  width: 2.6rem;
 }
 
 .key-letter {
@@ -50,11 +51,11 @@
   font-size: 1rem;
   font-weight: 700;
   align-content: center;
-  line-height: 2.3rem;
+  line-height: 2.5rem;
 }
 
 .key-letter-special {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 .word-char {
